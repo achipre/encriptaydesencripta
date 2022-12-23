@@ -1,0 +1,240 @@
+:root {
+  --fuente-principal: 'Inter', sans-serif;
+  --color-principal: #0A3871;
+  --color-secundario: #495057;
+  --background: #F3F5FC;
+  --desability: #D8DFE8;
+  --light: #FFFFFF
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background);
+  padding: 40px;
+  display: flex;
+}
+body header{
+  display: flex;
+  width: 120px;
+  height: 48px;
+}
+body header img{
+  place-self: center;
+  margin: 0 auto;
+}
+body main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+body main textarea{
+  width: 680px;
+  height: 60vh;
+  font-size: 3.2rem;
+  font-family: var(--fuente-principal);
+  border: none;
+  background-color: var(--background);
+  outline: none;
+  resize: none;
+  color: var(--color-principal);
+  
+}
+
+body main textarea::placeholder{
+  color: var(--color-principal);
+}
+
+body main .info{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body main .info .text-info{
+  font-family: var(--fuente-principal);
+  font-size: 1.2rem;
+  color: var(--color-secundario);
+  font-weight:lighter;
+}
+
+body main .info .rojo{
+  filter: invert(20%) sepia(100%) saturate(4000%);
+
+}
+
+body main .button{
+  width: 680px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+body main .button .btn-enc,
+body main .button .btn-desenc,
+.btn-copy{
+  margin: auto 0;
+  font-size: 1.6rem;
+  min-width: 328px;
+  padding: 24px;
+  background-color: var(--color-principal);
+  color: var(--background);
+  border-radius: 24px;
+  border: solid 1px var(--color-principal);
+}
+body main .button .btn-enc:hover{
+  cursor: pointer;
+  background-color: #0e4b96;
+}
+body main .button .btn-desenc:hover{
+  cursor: pointer;
+  background-color: #D8DFE8;
+}
+body main .button .btn-desenc,
+.btn-copy{
+  background-color: var(--background);
+  color: var(--color-principal);
+  border: solid 1px var(--color-principal);
+}
+
+
+body aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 400px;
+  height: 90vh;
+  background-color: var(--light);
+  border-radius: 32px;
+  padding: 32px;
+  box-shadow: 0 24px 32px -8px rgba(0,0,0,0.8);
+}
+
+body aside img{
+  width: 336px;
+}
+.disable{
+  display: none;
+}
+
+body aside p:nth-child(2){
+  margin-top: 32px;
+  font-family: var(--fuente-principal);
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+
+}
+
+body aside p:nth-child(3){
+  margin-top: 16px;
+  font-family: var(--fuente-principal);
+  font-size: 16px;
+  color: var(--color-secundario);
+  text-align: center;
+}
+
+body aside textarea{
+  height: 80vh;
+  font-family: var(--fuente-principal);
+  border: none;
+  font-size: 2.4rem;
+  color: var(--color-secundario);
+  outline: none;
+  resize: none;
+}
+/* body aside .btn-copy{
+  align-content: stretch;
+  justify-self: center;
+  min-width: 320px;
+} */
+
+body aside .btn-copy:hover{
+  cursor: pointer;
+  background-color: var(--color-secundario);
+  color: var(--background);
+}
+
+@media screen and (max-width: 1190px) {
+  body {
+    flex-direction: column;
+    padding: 73px 40px;
+    gap: 64px;
+  }
+  body header{
+    display: flex;
+    width: 32px;
+    height: 52px;
+  }
+  body main textarea{
+    height: 630px;
+  }
+  body aside{
+    width: 680px;
+    height: auto;
+    gap: 8px;
+  }
+  body aside img{
+    display: none;
+  }
+  body aside p:nth-child(2){
+    margin-top: 0;
+  
+  }
+  
+  body aside p:nth-child(3){
+    margin-top: 0;
+  }
+  body aside .btn-copy{
+    justify-self: center;
+  }
+  body aside .textarea-output{
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  body {
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 64px;
+  }
+  body main{
+    align-content: center;
+  }
+  body main textarea{
+    width: 100%;
+    height: 45vh;
+  }
+
+  body main .button{
+    width: 100%;
+    flex-direction: column;
+
+  }
+  body main .button .btn-enc,
+  body main .button .btn-desenc
+  {
+    min-width: 100%;
+  }
+  
+  .btn-copy{
+    min-width: auto;
+  }
+
+  body aside{
+    padding: 32px;
+    width: 100%;
+    height: auto;
+    gap: 8px;
+  }
+  body aside .textarea-output{
+    height: 40vh;
+  }
+}

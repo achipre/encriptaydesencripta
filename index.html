@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alex Chipre">
+  <meta name="description" content="Pagina Challenge Alura - Encripta y desencripta el contenido ingresado"></meta>
+  <meta name="keywords" content="challenge, alura latam, Oracle">
+  <title>Encripta Challenge</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img class="logo" src="img/Vector.svg" alt="logo">
+  </header>
+  
+  <main>
+    <textarea class="textarea-input" placeholder="Ingresa el texto aqui"></textarea>
+    <section class="info">
+      <img class="ico-info" src="img/info.svg" alt="informacion">
+      <p class="text-info">Solo letras minúsculas y sin acento</p>
+    </section>
+  
+    <section class="button">
+      <button class="btn-enc">Encriptar</button>
+      <button class="btn-desenc">Desencriptar</button>
+    </section>
+  </main>
+  
+  <aside class="output">
+    <img class="doll" src="img/doll.png" alt="">
+    <p class="msj-no-encontrado">Ningún mensaje fue encontrado</p>
+    <p class="msj-csj">Ingresa el texto que deseas encriptar o desencriptar</p>
+    <textarea class="textarea-output disable"></textarea>
+    <button class="btn-copy disable">Copiar</button>
+  </aside>
+  <script src="index.js"></script>
+</body>
+</html>
