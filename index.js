@@ -7,6 +7,9 @@ const asideMsjNo = document.querySelector('.msj-no-encontrado');
 const asideMsjCsj = document.querySelector('.msj-csj');
 const asideOut = document.querySelector('.textarea-output');
 const asideBtn = document.querySelector('.btn-copy');
+const check = document.querySelector('.visto');
+const textDeslock = document.querySelector('.deslock');
+const iconDeslock = document.querySelector('.lock');
 
 const infoIcon = document.querySelector('.ico-info');
 const infoText = document.querySelector('.text-info');
@@ -16,7 +19,9 @@ const botonDesencrip = document.querySelector(".btn-desenc");
 // Funcion del boton para Encritar mensaje
 botonEncrip.addEventListener('click', function() {
   // let textToConver = textToEncrip.value;
-  if(textToEncrip.value !== textToEncrip.value.toLowerCase() || textToEncrip.value !== textToEncrip.value.normalize("NFD")){
+  const vExp = /[^a-z! 0-9.]+/gm;
+  const inputValid = textToEncrip.value;
+  if(vExp.test(inputValid)){
     infoIcon.classList.add('rojo');
     infoText.classList.add('rojo');
     asideImg.classList.remove('disable');
@@ -44,9 +49,11 @@ botonEncrip.addEventListener('click', function() {
   }
 });
 botonDesencrip.addEventListener('click', function() {
+  deslock();
   if(textToEncrip.value !== textToEncrip.value.toLowerCase() || textToEncrip.value !== textToEncrip.value.normalize("NFD")){
     infoIcon.classList.add('rojo');
     infoText.classList.add('rojo');
+    
   } else {
     textEncrip.value = textToEncrip.value.replace(/ai|enter|imes|ober|ufat/g, function(match){
       if(match == "ai"){
@@ -60,6 +67,7 @@ botonDesencrip.addEventListener('click', function() {
       } else if(match =="ufat"){
         return "u";
       }});
+
     }
     infoIcon.classList.remove('rojo');
     infoText.classList.remove('rojo');
@@ -82,6 +90,24 @@ botonDesencrip.addEventListener('click', function() {
 // Funcion del boton para Copiar mensaje
 asideBtn.addEventListener('click', function(){
   navigator.clipboard.writeText(textEncrip.value);
+  asideBtn.classList.add('disable');
+  check.classList.remove('check')
+  check.classList.add('anima')
+  setTimeout(() => {
+    asideBtn.classList.remove('disable');
+    check.classList.add('check')
+    check.classList.remove('anima')
+  }, 800);
 })
+// Visualizar copia;
 
-
+function deslock(){
+  textDeslock.classList.add('disable');
+  iconDeslock.classList.remove('disable')
+  iconDeslock.classList.add('candado')
+  setTimeout(() => {
+    textDeslock.classList.remove('disable');
+    iconDeslock.classList.add('disable')
+    iconDeslock.classList.remove('candado')
+  }, 800);
+}
