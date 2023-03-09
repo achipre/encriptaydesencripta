@@ -19,7 +19,7 @@ const botonDesencrip = document.querySelector(".btn-desenc");
 // Funcion del boton para Encritar mensaje
 botonEncrip.addEventListener('click', function() {
   // let textToConver = textToEncrip.value;
-  const vExp = /[^a-z! 0-9.]+/gm;
+  const vExp = /[^a-z! 0-9.\n]+/gm;
   const inputValid = textToEncrip.value;
   if(vExp.test(inputValid)){
     infoIcon.classList.add('rojo');
