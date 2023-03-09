@@ -211,11 +211,6 @@ body {
   outline: none;
   resize: none;
 }
-/* .main aside .btn-copy{
-  align-content: stretch;
-  justify-self: center;
-  min-width: 320px;
-} */
 
 .main aside .btn-copy:hover{
   cursor: pointer;
